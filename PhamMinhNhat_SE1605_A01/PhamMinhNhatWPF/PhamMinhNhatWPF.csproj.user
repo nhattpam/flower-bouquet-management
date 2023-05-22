@@ -7,6 +7,20 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AdminScreen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomerLayout\CustomerManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AdminScreen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomerLayout\CustomerManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="FlowerBouquetLayout\FlowerBouquetManagement.xaml">
       <SubType>Designer</SubType>
     </Page>

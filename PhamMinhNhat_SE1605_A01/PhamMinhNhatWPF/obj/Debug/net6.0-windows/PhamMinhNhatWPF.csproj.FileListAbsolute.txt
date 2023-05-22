@@ -77,3 +77,7 @@ F:\FPT_SUBJECTS\Semester_7\PRN221\Assignments\flower-bouquet-management\PhamMinh
 F:\FPT_SUBJECTS\Semester_7\PRN221\Assignments\flower-bouquet-management\PhamMinhNhat_SE1605_A01\PhamMinhNhatWPF\bin\Debug\net6.0-windows\Repository.pdb
 F:\FPT_SUBJECTS\Semester_7\PRN221\Assignments\flower-bouquet-management\PhamMinhNhat_SE1605_A01\PhamMinhNhatWPF\obj\Debug\net6.0-windows\FlowerBouquetLayout\FlowerBouquetManagement.baml
 F:\FPT_SUBJECTS\Semester_7\PRN221\Assignments\flower-bouquet-management\PhamMinhNhat_SE1605_A01\PhamMinhNhatWPF\obj\Debug\net6.0-windows\PhamMinhNhatWPF.csproj.CopyComplete
+F:\FPT_SUBJECTS\Semester_7\PRN221\Assignments\flower-bouquet-management\PhamMinhNhat_SE1605_A01\PhamMinhNhatWPF\obj\Debug\net6.0-windows\AdminScreen.g.cs
+F:\FPT_SUBJECTS\Semester_7\PRN221\Assignments\flower-bouquet-management\PhamMinhNhat_SE1605_A01\PhamMinhNhatWPF\obj\Debug\net6.0-windows\AdminScreen.baml
+F:\FPT_SUBJECTS\Semester_7\PRN221\Assignments\flower-bouquet-management\PhamMinhNhat_SE1605_A01\PhamMinhNhatWPF\obj\Debug\net6.0-windows\CustomerLayout\CustomerManagement.g.cs
+F:\FPT_SUBJECTS\Semester_7\PRN221\Assignments\flower-bouquet-management\PhamMinhNhat_SE1605_A01\PhamMinhNhatWPF\obj\Debug\net6.0-windows\CustomerLayout\CustomerManagement.baml

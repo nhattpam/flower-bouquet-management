@@ -4,12 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhamMinhNhatWPF.FlowerBouquetWPF"
-        xmlns:flowerbouquetviewmodel="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d" 
+        Loaded="Window_Loaded"
         Title="FlowerBouquetManagement" Height="700" Width="900" WindowStartupLocation="CenterScreen">
-    <Window.DataContext>
-        <flowerbouquetviewmodel:FlowerBouquetViewModel></flowerbouquetviewmodel:FlowerBouquetViewModel>
-    </Window.DataContext>
+    
     <Grid>
         <DockPanel VerticalAlignment="Top" Margin="10">
             <Grid>
@@ -56,13 +54,13 @@
                 </StackPanel>
                 <!--Button-->
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Button x:Name="btnLoad" Margin="10" Width="80" Content="Load"/>
+                    <Button x:Name="btnLoad" Margin="10" Width="80" Content="Load" Click="btnLoad_Click"/>
                     <Button x:Name="btnInsert" Margin="10" Width="80" Content="Insert"/>
                     <Button x:Name="btnUpdate" Margin="10" Width="80" Content="Update"/>
                     <Button x:Name="btnDelete" Margin="10" Width="80" Content="Delete"/>
                 </StackPanel>
                 <!--List view-->
-                <ListView Grid.Row="3" Name="lvFlowerBoutiques" ItemsSource="{Binding FlowerBouquetList}"  Width="841" Height="Auto" Margin="0,4,25,-132" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                <ListView Grid.Row="3" Name="lvFlowerBoutiques" Width="841" Height="Auto" Margin="0,4,25,-132" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
                     <ListView.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
