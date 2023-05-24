@@ -66,13 +66,19 @@ namespace PhamMinhNhatWPF.CustomerLayout
 
                 var dto = new CustomerViewModel()
                 {
-                    CustomerId = cus.CustomerId
+                    CustomerId = cus.CustomerId,
+                    CustomerName = cus.CustomerName,
                 };
 
-
-                customerRepository.DeleteCustomer(dto.CustomerId);
-                MessageBox.Show("Thanh cong");
-                LoadData();
+                if(MessageBox.Show($"Do u want to delete customer: {dto.CustomerName}", "Delete Customer", 
+                    MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    //if yes -> Delete
+                    customerRepository.DeleteCustomer(dto.CustomerId);
+                    MessageBox.Show("Delete Thanh cong");
+                    LoadData();
+                }
+                
             }
         }
 

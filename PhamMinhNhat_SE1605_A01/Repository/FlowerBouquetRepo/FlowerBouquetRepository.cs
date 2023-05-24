@@ -13,7 +13,10 @@ namespace DataAccess.Repository.FlowerBouquetRepo
         {
             FlowerBouquetDAO.Instance.Delete(id);    
         }
-
+        public void DeleteInOrder(int flowerBouquetId)
+        {
+            FlowerBouquetDAO.Instance.DeleteInOrder(flowerBouquetId);
+        }
         public FlowerBouquet GetFlowerBouquetsById(int id)
         {
             return FlowerBouquetDAO.Instance.GetFlowerBouquet(id);

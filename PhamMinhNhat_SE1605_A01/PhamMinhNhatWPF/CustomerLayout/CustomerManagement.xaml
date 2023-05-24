@@ -21,27 +21,27 @@
                     <Label Content="Customer ID" />
                     <TextBox Name="txtCustomerID" HorizontalAlignment="Stretch" Height="25" 
                              Text="{Binding Path=CustomerId, Mode=OneWay}"
-                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}"/>
+                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}" IsEnabled="false"/>
                     <Label Content="Email" />
                     <TextBox Name="txtEmail" HorizontalAlignment="Stretch" Height="25" 
                              Text="{Binding Path=Email, Mode=OneWay}"
-                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}"/>
+                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}" IsEnabled="false"/>
                     <Label Content="Customer Name" />
                     <TextBox Name="txtCustomerName" HorizontalAlignment="Stretch" Height="25" 
                              Text="{Binding Path=CustomerName, Mode=OneWay}"
-                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}"/>
+                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}" IsEnabled="false"/>
                     <Label Content="City" />
                     <TextBox Name="txtCity" HorizontalAlignment="Stretch" Height="25" 
                              Text="{Binding Path=City, Mode=OneWay}"
-                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}"/>
+                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}" IsEnabled="false"/>
                     <Label Content="Country" />
                     <TextBox Name="txtCountry" HorizontalAlignment="Stretch" Height="25" 
                              Text="{Binding Path=Country, Mode=OneWay}"
-                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}"/>
+                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}" IsEnabled="false"/>
                     <Label Content="Birthday" />
                     <TextBox Name="txtBirthday" HorizontalAlignment="Stretch" Height="25" 
                              Text="{Binding Path=Birthday, Mode=OneWay}"
-                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}"/>
+                             DataContext="{Binding ElementName=lvCustomers, Path=SelectedItem}" IsEnabled="false"/>
                 </StackPanel>
                 <!--Button-->
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">

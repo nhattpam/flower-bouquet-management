@@ -1,5 +1,7 @@
 ﻿using BusinessObjects.Models;
+using DataAccess;
 using DataAccess.Repository.FlowerBouquetRepo;
+using Repository.OrderDetailRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +25,12 @@ namespace PhamMinhNhatWPF.FlowerBouquetWPF
     public partial class FlowerBouquetManagement : Window
     {
        IFlowerBouquetRepository flowerBouquetRepository { get; set; }
+       IOrderDetailRepository orderDetailRepository { get; set; }
        public LoginViewModel LoginMember { get; set; }
         public FlowerBouquetManagement()
         {
             flowerBouquetRepository = new FlowerBouquetRepository();
+            orderDetailRepository = new OrderDetailRepository();
             InitializeComponent();
         }
 
@@ -71,20 +75,38 @@ namespace PhamMinhNhatWPF.FlowerBouquetWPF
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             int flowerBouquetId = Int32.Parse(txtFlowerBouquetID.Text);
-            if(flowerBouquetId != null)
+            if (flowerBouquetId != null)
             {
                 var flowerBouquet = flowerBouquetRepository.GetFlowerBouquetsById(flowerBouquetId);
 
-                var dto = new FlowerBouquetViewModel() 
+                var dto = new FlowerBouquetViewModel()
                 {
-                    FlowerBouquetId = flowerBouquet.FlowerBouquetId
+                    FlowerBouquetId = flowerBouquet.FlowerBouquetId,
+                    FlowerBouquetName = flowerBouquet.FlowerBouquetName
                 };
+                if (MessageBox.Show($"Do u want to delete FlowerBouquet: {dto.FlowerBouquetName}", "Delete FlowerBouquet",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    // if yes->Delete
+                    IEnumerable<OrderDetail> list = orderDetailRepository.GetFlowerBouquetById(dto.FlowerBouquetId);
+                    if(list.Where(l => l.FlowerBouquetId == dto.FlowerBouquetId).Any())
+                    {
+                        //MessageBox.Show("Ton tai trong order" + dto.FlowerBouquetName);
+                        flowerBouquetRepository.DeleteInOrder(dto.FlowerBouquetId);
+                        LoadData();
+                    }
+                    else
+                    {
+                        //MessageBox.Show("khong Ton tai trong order" + dto.FlowerBouquetName);
+                        flowerBouquetRepository.DeleteFlowerBouquet(dto.FlowerBouquetId);
+                        LoadData();
+                    }
 
 
-                flowerBouquetRepository.DeleteFlowerBouquet(dto.FlowerBouquetId);
-                MessageBox.Show("Thanh cong");
-                LoadData();
+                }
+
             }
+            
         }
     }
 }

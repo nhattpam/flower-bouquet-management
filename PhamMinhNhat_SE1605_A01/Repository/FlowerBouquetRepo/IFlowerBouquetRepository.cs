@@ -14,5 +14,7 @@ namespace DataAccess.Repository.FlowerBouquetRepo
         public FlowerBouquet GetFlowerBouquetsById(int id);
 
         public void DeleteFlowerBouquet(int id);
+
+        public void DeleteInOrder(int flowerBouquetId);
     }
 }

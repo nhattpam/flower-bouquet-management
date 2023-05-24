@@ -70,6 +70,7 @@ namespace DataAccess
         }
 
 
+        //khong ton tai trong order
         public void Delete(int flowerBouquetId)
         {
             try
@@ -79,6 +80,30 @@ namespace DataAccess
                 {
                     var context = new FUFlowerBouquetManagementContext();
                     context.FlowerBouquets.Remove(f);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Flower does not exist!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        //ton tai trong order
+        public void DeleteInOrder(int flowerBouquetId) 
+        {
+            try
+            {
+                FlowerBouquet f = GetFlowerBouquet(flowerBouquetId);
+                if (f != null)
+                {
+                    var context = new FUFlowerBouquetManagementContext();
+                    f.FlowerBouquetStatus = 0;
+                    context.FlowerBouquets.Update(f);
                     context.SaveChanges();
                 }
                 else
