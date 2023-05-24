@@ -8,6 +8,7 @@ namespace ViewModel
 {
     public class LoginViewModel
     {
+        public int CustomerId { get; set; }
         public string Email { get; set; } = null!;
         public string CustomerName { get; set; } = null!;
         public string Password { get; set; } = null!;

@@ -53,7 +53,7 @@ namespace DataAccess
         {
             IEnumerable<OrderDetail> list = null;
             
-            list = GetOrderDetails().Where(o => o.FlowerBouquetId== flowerBouquetID).ToList();
+            list = GetOrderDetails().Where(t => t.FlowerBouquetId== flowerBouquetID).ToList();
             return list;
         }
     }

@@ -38,6 +38,7 @@ namespace PhamMinhNhatWPF
             {
                 var dto = new LoginViewModel()
                 {
+                    CustomerId = customer.CustomerId,
                     CustomerName = customer.CustomerName,
                     Email = customer.Email,
                     Password = customer.Password
@@ -53,7 +54,11 @@ namespace PhamMinhNhatWPF
                 }
                 else
                 {
-                    MessageBox.Show(dto.CustomerName);
+                    CustomerScreen customerScreen = new CustomerScreen()
+                    {
+                        LoginMember = dto
+                    };
+                    customerScreen.ShowDialog();
                 }
             }
             else

@@ -1,0 +1,56 @@
+﻿<Window x:Class="PhamMinhNhatWPF.CustomerLayout.MyCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhamMinhNhatWPF.CustomerLayout"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="MyCustomer" Height="500" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel VerticalAlignment="Top" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Background="LightBlue" Orientation="Vertical" HorizontalAlignment="Left" Width="400">
+                    <Label Content="Customer ID" />
+                    <TextBox Name="txtCustomerID" HorizontalAlignment="Stretch" Height="25" 
+                             
+                             />
+                    <Label Content="Customer Name" />
+                    <TextBox Name="txtCustomerName" HorizontalAlignment="Stretch" Height="25" 
+                           
+                            />
+                    <Label Content="Email" />
+                    <TextBox Name="txtEmail" HorizontalAlignment="Stretch" Height="25" 
+                           
+                            />
+                    <Label Content="City" />
+                    <TextBox Name="txtCity" HorizontalAlignment="Stretch" Height="25" 
+                            
+                            />
+                    <Label Content="Country" />
+                    <TextBox Name="txtCountry" HorizontalAlignment="Stretch" Height="25" 
+                             
+                             />
+                    <Label Content="Birthday" />
+                    <TextBox Name="txtBirthday" HorizontalAlignment="Stretch" Height="25" 
+                             
+                             />
+
+                </StackPanel>
+                <!--Button-->
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,-10" Grid.RowSpan="3">
+                    <Button x:Name="btnSave" Margin="10" Width="87" Content="Save" Height="20" Click="btnSave_Click"  />
+                    <Button x:Name="btnCancel" Margin="10" Width="80" Content="Cancel" />
+                </StackPanel>
+
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

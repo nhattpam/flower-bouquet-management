@@ -74,6 +74,12 @@ namespace PhamMinhNhatWPF.FlowerBouquetWPF
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+
+            DeleteAction();
+        }
+
+        private void DeleteAction()
+        {
             int flowerBouquetId = Int32.Parse(txtFlowerBouquetID.Text);
             if (flowerBouquetId != null)
             {
@@ -89,7 +95,7 @@ namespace PhamMinhNhatWPF.FlowerBouquetWPF
                 {
                     // if yes->Delete
                     IEnumerable<OrderDetail> list = orderDetailRepository.GetFlowerBouquetById(dto.FlowerBouquetId);
-                    if(list.Where(l => l.FlowerBouquetId == dto.FlowerBouquetId).Any())
+                    if (list.Where(l => l.FlowerBouquetId == dto.FlowerBouquetId).Any())
                     {
                         //MessageBox.Show("Ton tai trong order" + dto.FlowerBouquetName);
                         flowerBouquetRepository.DeleteInOrder(dto.FlowerBouquetId);
@@ -102,11 +108,9 @@ namespace PhamMinhNhatWPF.FlowerBouquetWPF
                         LoadData();
                     }
 
-
                 }
 
             }
-            
         }
     }
 }
