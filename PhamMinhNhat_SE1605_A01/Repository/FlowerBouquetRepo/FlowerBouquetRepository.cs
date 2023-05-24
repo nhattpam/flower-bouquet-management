@@ -9,7 +9,16 @@ namespace DataAccess.Repository.FlowerBouquetRepo
 {
     public class FlowerBouquetRepository : IFlowerBouquetRepository
     {
-       
+        public void DeleteFlowerBouquet(int id)
+        {
+            FlowerBouquetDAO.Instance.Delete(id);    
+        }
+
+        public FlowerBouquet GetFlowerBouquetsById(int id)
+        {
+            return FlowerBouquetDAO.Instance.GetFlowerBouquet(id);
+        }
+
         public IEnumerable<FlowerBouquet> GetFlowerBouquetsList()
         {
             return FlowerBouquetDAO.Instance.GetFlowerBouquetsList();

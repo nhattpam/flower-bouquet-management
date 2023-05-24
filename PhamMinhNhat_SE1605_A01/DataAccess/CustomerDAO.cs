@@ -85,5 +85,47 @@ namespace DataAccess
             return customer;
         }
 
+        public Customer GetCustomer(int customerId)
+        {
+            Customer cus = null;
+
+            try
+            {
+
+                var context = new FUFlowerBouquetManagementContext();
+                cus = context.Customers.SingleOrDefault(f => f.CustomerId == customerId); ;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return cus;
+        }
+
+
+        public void Delete(int customerId)
+        {
+            try
+            {
+                Customer f = GetCustomer(customerId);
+                if (f != null)
+                {
+                    var context = new FUFlowerBouquetManagementContext();
+                    context.Customers.Remove(f);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Customer does not exist!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

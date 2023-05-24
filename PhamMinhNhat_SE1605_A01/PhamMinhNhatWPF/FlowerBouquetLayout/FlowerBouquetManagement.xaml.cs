@@ -67,5 +67,24 @@ namespace PhamMinhNhatWPF.FlowerBouquetWPF
         {
             LoadData();
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            int flowerBouquetId = Int32.Parse(txtFlowerBouquetID.Text);
+            if(flowerBouquetId != null)
+            {
+                var flowerBouquet = flowerBouquetRepository.GetFlowerBouquetsById(flowerBouquetId);
+
+                var dto = new FlowerBouquetViewModel() 
+                {
+                    FlowerBouquetId = flowerBouquet.FlowerBouquetId
+                };
+
+
+                flowerBouquetRepository.DeleteFlowerBouquet(dto.FlowerBouquetId);
+                MessageBox.Show("Thanh cong");
+                LoadData();
+            }
+        }
     }
 }

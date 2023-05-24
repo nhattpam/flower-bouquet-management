@@ -32,7 +32,7 @@ namespace PhamMinhNhatWPF
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
-            var customer = customerRepository.Login(txtEmail.Text, txtPassword.Text);
+            var customer = customerRepository.Login(txtEmail.Text, txtPassword.Password);
 
             if (customer != null)
             {

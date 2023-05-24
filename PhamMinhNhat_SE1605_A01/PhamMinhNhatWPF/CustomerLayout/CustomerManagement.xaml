@@ -45,10 +45,10 @@
                 </StackPanel>
                 <!--Button-->
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Button x:Name="btnLoad" Margin="10" Width="80" Content="Load" />
+                    <Button x:Name="btnLoad" Margin="10" Width="80" Content="Load" Click="btnLoad_Click" />
                     <Button x:Name="btnInsert" Margin="10" Width="80" Content="Insert"/>
                     <Button x:Name="btnUpdate" Margin="10" Width="80" Content="Update"/>
-                    <Button x:Name="btnDelete" Margin="10" Width="80" Content="Delete" />
+                    <Button x:Name="btnDelete" Margin="10" Width="80" Content="Delete" Click="btnDelete_Click" />
                 </StackPanel>
                 <!--List view-->
                 <ListView Grid.Row="2" Name="lvCustomers" Height="Auto" Margin="8,0,0,-124" Grid.RowSpan="2">

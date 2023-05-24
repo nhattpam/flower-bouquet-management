@@ -1,0 +1,77 @@
+﻿<Window x:Class="PhamMinhNhatWPF.OrderLayout.OrderManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhamMinhNhatWPF.OrderLayout"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Height="700" Width="900" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel VerticalAlignment="Top" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Background="LightBlue" Orientation="Vertical" HorizontalAlignment="Left" Width="400">
+                    <Label Content="Order ID" />
+                    <TextBox Name="txtOrderId" HorizontalAlignment="Stretch" Height="25" 
+                             Text="{Binding Path=OrderId, Mode=OneWay}"
+                             DataContext="{Binding ElementName=lvOrders, Path=SelectedItem}" IsEnabled="false"/>
+                    <Label Content="Customer Name" />
+                    <TextBox Name="txtCustomerName" HorizontalAlignment="Stretch" Height="25" 
+                             Text="{Binding Path=Customer.CustomerName, Mode=OneWay}"
+                             DataContext="{Binding ElementName=lvOrders, Path=SelectedItem}" IsEnabled="false"/>
+                    <Label Content="Order Date" />
+                    <TextBox Name="txtOrderDate" HorizontalAlignment="Stretch" Height="25" 
+                             Text="{Binding Path=OrderDate, Mode=OneWay}"
+                             DataContext="{Binding ElementName=lvOrders, Path=SelectedItem}" IsEnabled="false"/>
+                    <Label Content="Shipped Date" />
+                    <TextBox Name="txtShippedDate" HorizontalAlignment="Stretch" Height="25" 
+                             Text="{Binding Path=ShippedDate, Mode=OneWay}"
+                             DataContext="{Binding ElementName=lvOrders, Path=SelectedItem}" IsEnabled="false"/>
+                    <Label Content="Total" />
+                    <TextBox Name="txtTotal" HorizontalAlignment="Stretch" Height="25" 
+                             Text="{Binding Path=Total, Mode=OneWay}"
+                             DataContext="{Binding ElementName=lvOrders, Path=SelectedItem}" IsEnabled="false"/>
+                    <Label Content="Order Status" />
+                    <TextBox Name="txtOrderStatus" HorizontalAlignment="Stretch" Height="25" 
+                             Text="{Binding Path=OrderStatus, Mode=OneWay}"
+                             DataContext="{Binding ElementName=lvOrders, Path=SelectedItem}" IsEnabled="false"/>
+                </StackPanel>
+                <!--Button-->
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button x:Name="btnLoad" Margin="10" Width="80" Content="Load" Click="btnLoad_Click" />
+                    <Button x:Name="btnInsert" Margin="10" Width="80" Content="Insert" />
+                    <Button x:Name="btnUpdate" Margin="10" Width="80" Content="Update"/>
+                    <Button x:Name="btnDelete" Margin="10" Width="80" Content="Delete"/>
+                </StackPanel>
+                <!--List view-->
+                <ListView Grid.Row="3" Name="lvOrders" Width="841" Height="Auto" Margin="0,4,25,-132" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                    <ListView.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.048"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0.333"/>
+                        </TransformGroup>
+                    </ListView.RenderTransform>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="OrderID" Width="100" DisplayMemberBinding="{Binding Path=OrderId}"/>
+                            <GridViewColumn Header="Customer Id" Width="100" DisplayMemberBinding="{Binding Path=CustomerId}"/>
+                            <GridViewColumn Header="Order Date" Width="100" DisplayMemberBinding="{Binding Path=OrderDate}"/>
+                            <GridViewColumn Header="Shipped Date" Width="100" DisplayMemberBinding="{Binding Path=ShippedDate}"/>
+                            <GridViewColumn Header="Total" Width="100" DisplayMemberBinding="{Binding Path=Total}"/>
+                            <GridViewColumn Header="OrderStatus" Width="100" DisplayMemberBinding="{Binding Path=OrderStatus}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

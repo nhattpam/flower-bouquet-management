@@ -1,6 +1,7 @@
 ﻿using BusinessObjects.Models;
 using PhamMinhNhatWPF.CustomerLayout;
 using PhamMinhNhatWPF.FlowerBouquetWPF;
+using PhamMinhNhatWPF.OrderLayout;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,15 @@ namespace PhamMinhNhatWPF
                 LoginMember = LoginMember
             };
             flowerBouquetManagement.ShowDialog();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            OrderManagement orderManagement = new OrderManagement()
+            {
+                LoginMember = LoginMember
+            };
+            orderManagement.ShowDialog();
         }
     }
 }

@@ -56,5 +56,29 @@ namespace PhamMinhNhatWPF.CustomerLayout
         {
             LoadData();
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            int customId = Int32.Parse(txtCustomerID.Text);
+            if (customId != null)
+            {
+                var cus = customerRepository.GetCustomerById(customId);
+
+                var dto = new CustomerViewModel()
+                {
+                    CustomerId = cus.CustomerId
+                };
+
+
+                customerRepository.DeleteCustomer(dto.CustomerId);
+                MessageBox.Show("Thanh cong");
+                LoadData();
+            }
+        }
+
+        private void btnLoad_Click(object sender, RoutedEventArgs e)
+        {
+            LoadData();
+        }
     }
 }

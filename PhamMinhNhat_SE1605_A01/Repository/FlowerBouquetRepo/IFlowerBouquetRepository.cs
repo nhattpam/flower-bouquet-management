@@ -10,5 +10,9 @@ namespace DataAccess.Repository.FlowerBouquetRepo
     public interface IFlowerBouquetRepository
     {
         public IEnumerable<FlowerBouquet> GetFlowerBouquetsList();
+
+        public FlowerBouquet GetFlowerBouquetsById(int id);
+
+        public void DeleteFlowerBouquet(int id);
     }
 }

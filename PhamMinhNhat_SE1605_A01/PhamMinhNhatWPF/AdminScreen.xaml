@@ -10,5 +10,6 @@
     <Grid>
         <Button FontSize="25" Content="Flower Bouquet" HorizontalAlignment="Left" Margin="214,38,0,0" VerticalAlignment="Top" Height="88" Width="316" Click="Button_Click"/>
         <Button FontSize="25" Content="Customer" HorizontalAlignment="Left" Margin="218,175,0,0" VerticalAlignment="Top" Height="87" Width="316" Click="Button_Click_1"/>
+        <Button FontSize="25" Content="Order Managements" HorizontalAlignment="Left" Margin="215,310,0,0" VerticalAlignment="Top" Height="87" Width="316" Click="Button_Click_2" />
     </Grid>
 </Window>

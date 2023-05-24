@@ -11,5 +11,9 @@ namespace Repository.CustomerRepo
     {
         public IEnumerable<Customer> GetCustomersList();
         public Customer Login(string email, string password);
+
+        public Customer GetCustomerById(int id);
+
+        public void DeleteCustomer(int id);
     }
 }

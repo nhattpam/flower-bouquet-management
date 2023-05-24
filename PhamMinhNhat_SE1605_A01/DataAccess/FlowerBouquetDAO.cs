@@ -49,5 +49,48 @@ namespace DataAccess
 
             return flowerBouquets;
         }
+
+        public FlowerBouquet GetFlowerBouquet(int flowerBouquetId)
+        {
+            FlowerBouquet flower = null;
+
+            try
+            {
+              
+               var context = new FUFlowerBouquetManagementContext();
+                flower = context.FlowerBouquets.SingleOrDefault(f => f.FlowerBouquetId == flowerBouquetId);;
+            
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return flower;
+        }
+
+
+        public void Delete(int flowerBouquetId)
+        {
+            try
+            {
+                FlowerBouquet f = GetFlowerBouquet(flowerBouquetId);
+                if (f != null)
+                {
+                    var context = new FUFlowerBouquetManagementContext();
+                    context.FlowerBouquets.Remove(f);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Flower does not exist!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }
