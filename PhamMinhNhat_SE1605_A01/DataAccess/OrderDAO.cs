@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace DataAccess
 {
@@ -46,6 +47,26 @@ namespace DataAccess
             }
 
             return orders;
+        }
+
+        public IEnumerable<Order> GetOrders(int customerId)
+        {
+            IEnumerable<Order> os = null;
+
+            try
+            {
+
+                var context = new FUFlowerBouquetManagementContext();
+                os = context.Orders.Include(pro => pro.Customer)
+                    .Where(c => c.CustomerId == customerId);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return os;
         }
     }
 }

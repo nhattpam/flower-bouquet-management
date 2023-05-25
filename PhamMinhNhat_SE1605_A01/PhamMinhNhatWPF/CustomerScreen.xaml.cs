@@ -1,4 +1,5 @@
 ﻿using PhamMinhNhatWPF.CustomerLayout;
+using PhamMinhNhatWPF.OrderLayout;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,11 @@ namespace PhamMinhNhatWPF
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            MyOrder mo = new MyOrder() 
+            {
+                LoginMember = LoginMember
+            };
+            mo.ShowDialog();
         }
     }
 }

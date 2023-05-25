@@ -10,6 +10,11 @@ namespace Repository.CustomerRepo
 {
     public class CustomerRepository : ICustomerRepository
     {
+        public void AddCustomer(Customer c)
+        {
+            CustomerDAO.Instance.AddCustomer(c);
+        }
+
         public void DeleteCustomer(int id)
         {
             CustomerDAO.Instance.Delete(id);
@@ -28,6 +33,11 @@ namespace Repository.CustomerRepo
         public Customer Login(string email, string password)
         {
             return CustomerDAO.Instance.Login(email, password);
+        }
+
+        public void Update(Customer c)
+        {
+            CustomerDAO.Instance.Update(c);
         }
     }
 }

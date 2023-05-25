@@ -49,7 +49,7 @@ namespace PhamMinhNhatWPF.OrderLayout
                 Total = oo.Total,
                 OrderStatus = oo.OrderStatus,
                 Customer = oo.Customer
-            }); ;
+            }); 
 
             return dtos;
         }
@@ -62,7 +62,7 @@ namespace PhamMinhNhatWPF.OrderLayout
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(LoginMember.CustomerName);
+            LoadData();
         }
     }
 }

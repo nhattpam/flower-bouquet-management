@@ -26,5 +26,10 @@ namespace DataAccess.Repository.FlowerBouquetRepo
         {
             return FlowerBouquetDAO.Instance.GetFlowerBouquetsList();
         }
+
+        public void AddFlowerBouquet(FlowerBouquet flowerBouquet)
+        {
+            FlowerBouquetDAO.Instance.AddFlowerBouquet(flowerBouquet);
+        }
     }
 }

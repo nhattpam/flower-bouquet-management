@@ -116,6 +116,20 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
-
+        public void AddFlowerBouquet(FlowerBouquet flowerBouquet)
+        {
+            
+                if (GetFlowerBouquet(flowerBouquet.FlowerBouquetId) == null)
+                {
+                    var context = new FUFlowerBouquetManagementContext();
+                    context.FlowerBouquets.Add(flowerBouquet);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Flower is existed!!");
+                }
+            
+        }
     }
 }

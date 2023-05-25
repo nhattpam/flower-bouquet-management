@@ -1,4 +1,6 @@
-﻿using Repository.CustomerRepo;
+﻿using BusinessObjects.Models;
+using DataAccess;
+using Repository.CustomerRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +33,35 @@ namespace PhamMinhNhatWPF.CustomerLayout
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(LoginMember.CustomerId.ToString());
+            //update profile
+            Customer customer = customerRepository.GetCustomerById(LoginMember.CustomerId);
+
+            Customer c = new Customer()
+            {
+                CustomerId = customer.CustomerId,
+                CustomerName = txtCustomerName.Text,
+                Email = txtEmail.Text,
+                City = txtCity.Text,
+                Country = txtCountry.Text,
+                Birthday = DateTime.Parse(txtBirthday.Text)
+            };
+
+            //customer = new Customer()
+            //{
+            //    CustomerId = c.CustomerId,
+            //    City = c.City,
+            //    Country 
+            //    = c.Country,
+            //    Email = c.Email,
+            //    Birthday = c.Birthday,
+            //    CustomerName = c.CustomerName
+            //};
+            CustomerDAO.Instance.Update(c);
+
+            this.Close();
         }
+
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -50,6 +79,11 @@ namespace PhamMinhNhatWPF.CustomerLayout
             txtCity.Text = customer.City;
             txtEmail.Text = customer.Email;
             txtBirthday.Text = customer.Birthday.ToString();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

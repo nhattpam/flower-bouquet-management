@@ -20,7 +20,7 @@
                 <StackPanel Background="LightBlue" Orientation="Vertical" HorizontalAlignment="Left" Width="400">
                     <Label Content="Customer ID" />
                     <TextBox Name="txtCustomerID" HorizontalAlignment="Stretch" Height="25" 
-                             
+                             IsEnabled="False"
                              />
                     <Label Content="Customer Name" />
                     <TextBox Name="txtCustomerName" HorizontalAlignment="Stretch" Height="25" 
@@ -47,7 +47,7 @@
                 <!--Button-->
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,-10" Grid.RowSpan="3">
                     <Button x:Name="btnSave" Margin="10" Width="87" Content="Save" Height="20" Click="btnSave_Click"  />
-                    <Button x:Name="btnCancel" Margin="10" Width="80" Content="Cancel" />
+                    <Button x:Name="btnCancel" Margin="10" Width="80" Content="Cancel" Click="btnCancel_Click" />
                 </StackPanel>
 
             </Grid>

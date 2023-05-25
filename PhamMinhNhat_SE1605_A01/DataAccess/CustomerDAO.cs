@@ -2,10 +2,12 @@
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DataAccess
 {
@@ -127,6 +129,58 @@ namespace DataAccess
             }
         }
 
+        public void AddCustomer(Customer c)
+        {
+            if (c == null)
+            {
+                throw new Exception("Customer is ####!!");
+            }
+            try
+            {
+                if (GetCustomer(c.CustomerId) == null)
+                {
+                    var context = new FUFlowerBouquetManagementContext();
+                    context.Customers.Add(c);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Customer ton tai roi!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Update(Customer c)
+        {
+            try
+            {
+                Customer cus = GetCustomer(c.CustomerId);
+                if (cus != null)
+                {
+                    var context = new FUFlowerBouquetManagementContext();
+                    cus.CustomerName = c.CustomerName;
+                    cus.City = c.City;
+                    cus.Email = c.Email;
+                    cus.Country = c.Country;
+                    cus.Birthday = c.Birthday;
+                    context.Customers.Update(cus);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Cus does not exist!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
 
     }
 }

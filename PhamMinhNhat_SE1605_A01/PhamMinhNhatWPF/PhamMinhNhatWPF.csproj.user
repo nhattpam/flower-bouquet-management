@@ -10,6 +10,9 @@
     <Compile Update="AdminScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CustomerLayout\AddCustomer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CustomerLayout\CustomerManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,12 +22,21 @@
     <Compile Update="CustomerScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="FlowerBouquetLayout\AddFlowerBouquet.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="OrderLayout\MyOrder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="OrderLayout\OrderManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AdminScreen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomerLayout\AddCustomer.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CustomerLayout\CustomerManagement.xaml">
@@ -36,6 +48,9 @@
     <Page Update="CustomerScreen.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="FlowerBouquetLayout\AddFlowerBouquet.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="FlowerBouquetLayout\FlowerBouquetManagement.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -43,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OrderLayout\MyOrder.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="OrderLayout\OrderManagement.xaml">

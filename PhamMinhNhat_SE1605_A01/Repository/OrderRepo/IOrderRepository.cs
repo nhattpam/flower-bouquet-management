@@ -10,5 +10,7 @@ namespace Repository.OrderRepo
     public interface IOrderRepository
     {
         public IEnumerable<Order> GetOrdersList();
+
+        public IEnumerable<Order> GetOrders(int customerId);
     }
 }

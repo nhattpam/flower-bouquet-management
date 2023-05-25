@@ -1,0 +1,57 @@
+﻿<Window x:Class="PhamMinhNhatWPF.FlowerBouquetLayout.AddFlowerBouquet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhamMinhNhatWPF.FlowerBouquetLayout"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="AddFlowerBouquet" Height="500" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel VerticalAlignment="Top" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Background="LightBlue" Orientation="Vertical" HorizontalAlignment="Left" Width="400">
+                    <Label Content="FlowerBouquet ID" />
+                    <TextBox Name="txtFlowerBouquetID" HorizontalAlignment="Stretch" Height="25" 
+                             />
+                    <Label Content="FlowerBouquet Name" />
+                    <TextBox Name="txtFlowerBouquetName" HorizontalAlignment="Stretch" Height="25" 
+                            />
+                    <Label Content="Category" />
+                    <ComboBox Name="cbCategoryID" HorizontalAlignment="Stretch" Height="25"
+                             ItemsSource="{Binding categories}"/>
+                    <Label Content="Description" />
+                    <TextBox Name="txtDescription" HorizontalAlignment="Stretch" Height="25" 
+                            />
+                    <Label Content="UnitPrice" />
+                    <TextBox Name="txtUnitPrice" HorizontalAlignment="Stretch" Height="25" 
+                             Text="{Binding Path=UnitPrice, StringFormat={}{0:N3}}"
+                             />
+                    <Label Content="UnitsInStock" />
+                    <TextBox Name="txtUnitsInStock" HorizontalAlignment="Stretch" Height="25" 
+                             />
+                    <Label Content="Supplier" />
+                    <ComboBox Name="cbSupplierId" HorizontalAlignment="Stretch" Height="25" 
+                             ItemsSource="{Binding suppliers}" 
+                             />
+                    <Label Content="Status" />
+                    <TextBox Name="txtStatus" HorizontalAlignment="Stretch" Height="25" 
+                             />
+                </StackPanel>
+                <!--Button-->
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,-10" Grid.RowSpan="3">
+                    <Button x:Name="btnSave" Margin="10" Width="87" Content="Save" Height="20" Click="btnSave_Click"  />
+                    <Button x:Name="btnCancel" Margin="10" Width="80" Content="Cancel" Click="btnCancel_Click" />
+                </StackPanel>
+
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

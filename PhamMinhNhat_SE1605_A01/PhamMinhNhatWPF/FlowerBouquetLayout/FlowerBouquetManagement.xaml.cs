@@ -1,6 +1,7 @@
 ﻿using BusinessObjects.Models;
 using DataAccess;
 using DataAccess.Repository.FlowerBouquetRepo;
+using PhamMinhNhatWPF.FlowerBouquetLayout;
 using Repository.OrderDetailRepo;
 using System;
 using System.Collections.Generic;
@@ -111,6 +112,15 @@ namespace PhamMinhNhatWPF.FlowerBouquetWPF
                 }
 
             }
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            AddFlowerBouquet addFlowerBouquet = new AddFlowerBouquet() 
+            {
+                LoginMember = LoginMember
+            };
+            addFlowerBouquet.ShowDialog();
         }
     }
 }

@@ -86,5 +86,15 @@ namespace PhamMinhNhatWPF.CustomerLayout
         {
             LoadData();
         }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            AddCustomer ad = new AddCustomer() 
+            {
+                LoginMember = LoginMember
+            };
+
+            ad.ShowDialog();
+        }
     }
 }
